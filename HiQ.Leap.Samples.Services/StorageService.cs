@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Concurrent;
-using HiQ.Leap.Samples.Common.Models;
+﻿using HiQ.Leap.Samples.Common.Models;
 using HiQ.Leap.Samples.Services.Contracts;
-using System.Linq;
 
 namespace HiQ.Leap.Samples.Services
 {
