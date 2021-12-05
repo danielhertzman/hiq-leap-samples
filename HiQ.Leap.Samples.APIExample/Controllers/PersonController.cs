@@ -2,18 +2,16 @@
 using HiQ.Leap.Samples.Services.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HiQ.Leap.APIExample.Controllers;
+namespace HiQ.Leap.Samples.APIExample.Controllers;
 
 [ApiController]
 [Route("controller]")]
 public class PersonController : ControllerBase
 {
-    private readonly ILogger<PersonController> _logger;
     private readonly IStorageService _storageService;
 
-    public PersonController(ILogger<PersonController> logger, IStorageService storageService)
+    public PersonController(IStorageService storageService)
     {
-        _logger = logger;
         _storageService = storageService;
     }
 
