@@ -4,7 +4,7 @@
     "anonymousAuthentication": true
   },
   "profiles": {
-    "HiQ.Leap.Samples.Common": {
+    "HiQ.Leap.Samples.Domain": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "http://localhost:57017",

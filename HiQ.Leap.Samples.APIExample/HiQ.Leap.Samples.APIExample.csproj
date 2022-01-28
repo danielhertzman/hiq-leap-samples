@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -15,7 +15,7 @@
     <ProjectReference Include="..\HiQ.Leap.Samples.Services\HiQ.Leap.Samples.Services.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\HiQ.Leap.Samples.Common\HiQ.Leap.Samples.Common.csproj">
+    <ProjectReference Include="..\HiQ.Leap.Samples.Domain\HiQ.Leap.Samples.Domain.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>

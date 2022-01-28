@@ -1,14 +1,17 @@
-﻿using HiQ.Leap.Samples.Common.Models;
+using HiQ.Leap.Samples.Domain.Models;
+using HiQ.Leap.Samples.Domain.RequestModels;
 
 namespace HiQ.Leap.Samples.Services.Contracts;
 
 public interface IStorageService
 {
-    Person SavePerson(Person person);
+    void EditPerson(int id, PersonEditRequest person);
 
-    Person GetPerson(string name);
+    Person GetPerson(int id);
 
     List<Person> GetPersons();
 
-    void EditPerson(Person person);
+    Person SavePerson(PersonCreateRequest person);
+
+    void DeletePerson(int id);
 }

@@ -262,3 +262,4 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 /.DS_Store
+/HiQ.Leap.Samples.APIExample/.DS_Store

@@ -1,30 +1,42 @@
-﻿using HiQ.Leap.Samples.Common.Models;
+﻿using HiQ.Leap.Samples.Domain.Exceptions;
+using HiQ.Leap.Samples.Domain.Models;
+using HiQ.Leap.Samples.Domain.RequestModels;
 using HiQ.Leap.Samples.Services.Contracts;
 
 namespace HiQ.Leap.Samples.Services;
 
 public class StorageService : IStorageService
 {
-    private readonly List<Person> _personList;
+    private readonly ILogger<StorageService> _logger;
+    private readonly Dictionary<int, Person> _persons;
 
-    public StorageService()
+    private int _lastKeyInserted;
+
+    public StorageService(ILogger<StorageService> logger)
     {
-        _personList = new List<Person>();
+        _logger = logger;
+        _persons = new Dictionary<int, Person>();
     }
 
-    public void EditPerson(Person person)
+    public void EditPerson(int id, PersonEditRequest request)
     {
-        var index = _personList.FindIndex(x => x.Name == person.Name);
-        _personList[index] = person;
-    }
-
-    public Person GetPerson(string name)
-    {
-        var person = _personList.SingleOrDefault(x => x.Name == name);
-
-        if (person == null)
+        if (!_persons.TryGetValue(id, out var person))
         {
-            throw new Exception("Person not found");
+            throw new PersonNotFoundException(id);
+        }
+
+        person.GivenName = request.GivenName;
+        person.SurName = request.SurName;
+        _persons[id] = person;
+    }
+
+    public Person GetPerson(int id)
+    {
+        _logger.LogInformation("Attempting to find person with id '{id}'", id);
+
+        if (!_persons.TryGetValue(id, out var person))
+        {
+            throw new PersonNotFoundException(id);
         }
 
         return person;
@@ -32,12 +44,29 @@ public class StorageService : IStorageService
 
     public List<Person> GetPersons()
     {
-        return _personList;
+        return _persons.Values.ToList();
     }
 
-    public Person SavePerson(Person person)
+    public Person SavePerson(PersonCreateRequest personRequest)
     {
-        _personList.Add(person);
+        var id = ++_lastKeyInserted;
+
+        var person = new Person
+        {
+            Id = id,
+            GivenName = personRequest.GivenName,
+            SurName = personRequest.SurName,
+        };
+
+        _persons.Add(id, person);
         return person;
+    }
+
+    public void DeletePerson(int id)
+    {
+        if (!_persons.Remove(id))
+        {
+            throw new PersonNotFoundException(id);
+        }
     }
 }
