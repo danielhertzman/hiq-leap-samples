@@ -2,6 +2,8 @@
 using System.Text.Json;
 using HiQ.Leap.Samples.APIExample.Middleware;
 using HiQ.Leap.Samples.Domain.Exceptions;
+using HiQ.Leap.Samples.Repository;
+using HiQ.Leap.Samples.Repository.Contracts;
 using HiQ.Leap.Samples.Services;
 using HiQ.Leap.Samples.Services.Contracts;
 
@@ -14,7 +16,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IStorageService, StorageService>();
+builder.Services.AddSingleton<IPersonService, PersonService>();
+builder.Services.AddSingleton<IRepository, Repository>();
 builder.Services.AddLogging();
 
 var app = builder.Build();

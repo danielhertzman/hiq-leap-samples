@@ -3,7 +3,7 @@ using HiQ.Leap.Samples.Domain.RequestModels;
 
 namespace HiQ.Leap.Samples.Services.Contracts;
 
-public interface IStorageService
+public interface IPersonService
 {
     void EditPerson(int id, PersonEditRequest person);
 

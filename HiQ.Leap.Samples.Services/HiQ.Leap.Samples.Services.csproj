@@ -13,5 +13,8 @@
     <ProjectReference Include="..\HiQ.Leap.Samples.Domain\HiQ.Leap.Samples.Domain.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\HiQ.Leap.Samples.Repository\HiQ.Leap.Samples.Repository.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 </Project>

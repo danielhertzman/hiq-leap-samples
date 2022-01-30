@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiQ.Leap.Samples.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiQ.Leap.Samples.FunctionAppExample", "HiQ.Leap.Samples.FunctionAppExample\HiQ.Leap.Samples.FunctionAppExample.csproj", "{D728994A-9BAA-4ED7-9428-E1B02E5511BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiQ.Leap.Samples.Repository", "HiQ.Leap.Samples.Repository\HiQ.Leap.Samples.Repository.csproj", "{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D728994A-9BAA-4ED7-9428-E1B02E5511BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D728994A-9BAA-4ED7-9428-E1B02E5511BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D728994A-9BAA-4ED7-9428-E1B02E5511BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

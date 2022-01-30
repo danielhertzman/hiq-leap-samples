@@ -9,45 +9,45 @@ namespace HiQ.Leap.Samples.APIExample.Controllers;
 [Route("/[controller]")]
 public class PersonsController : ControllerBase
 {
-    private readonly IStorageService _storageService;
+    private readonly IPersonService _personService;
 
-    public PersonsController(IStorageService storageService)
+    public PersonsController(IPersonService personService)
     {
-        _storageService = storageService;
+        _personService = personService;
     }
 
     [HttpPost(Name = "PostPerson")]
     public ActionResult<Person> Post([FromBody] PersonCreateRequest request)
     {
-        var result = _storageService.SavePerson(request);
+        var result = _personService.SavePerson(request);
         return Created(nameof(Person), result);
     }
 
     [HttpPut("{id:int}", Name = "EditPerson")]
     public ActionResult<Person> EditPerson([FromRoute] int id, [FromBody] PersonEditRequest request)
     {
-        _storageService.EditPerson(id, request);
+        _personService.EditPerson(id, request);
         return Ok();
     }
 
     [HttpGet("{id:int}", Name = "GetPersonById")]
     public ActionResult<Person> GetPersonById([FromRoute] int id)
     {
-        var result = _storageService.GetPerson(id);
+        var result = _personService.GetPerson(id);
         return Ok(result);
     }
 
     [HttpGet(Name = "GetPersons")]
     public ActionResult<List<Person>> GetPersons()
     {
-        var result = _storageService.GetPersons();
+        var result = _personService.GetPersons();
         return Ok(result);
     }
 
     [HttpDelete("{id:int}", Name = "DeletePerson")]
     public ActionResult DeletePerson([FromRoute] int id)
     {
-        _storageService.DeletePerson(id);
+        _personService.DeletePerson(id);
         return Ok();
     }
 }
