@@ -11,7 +11,7 @@ public interface IPersonService
 
     List<Person> GetPersons();
 
-    Person SavePerson(PersonCreateRequest person);
+    Task<Person> SavePersonAsync(PersonCreateRequest personRequest);
 
     void DeletePerson(int id);
 }

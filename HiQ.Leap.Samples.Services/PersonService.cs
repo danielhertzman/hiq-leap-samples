@@ -1,5 +1,6 @@
 ﻿using HiQ.Leap.Samples.Domain.Models;
 using HiQ.Leap.Samples.Domain.RequestModels;
+using HiQ.Leap.Samples.RandomIntegration.Contracts;
 using HiQ.Leap.Samples.Repository.Contracts;
 using HiQ.Leap.Samples.Services.Contracts;
 
@@ -8,11 +9,13 @@ namespace HiQ.Leap.Samples.Services;
 public class PersonService : IPersonService
 {
     private readonly IRepository _repository;
+    private readonly IRandomIntegration _randomIntegration;
     private readonly ILogger<PersonService> _logger;
 
-    public PersonService(IRepository repository, ILogger<PersonService> logger)
+    public PersonService(IRepository repository, IRandomIntegration randomIntegration, ILogger<PersonService> logger)
     {
         _repository = repository;
+        _randomIntegration = randomIntegration;
         _logger = logger;
     }
 
@@ -34,9 +37,10 @@ public class PersonService : IPersonService
         return persons;
     }
 
-    public Person SavePerson(PersonCreateRequest personRequest)
+    public async Task<Person> SavePersonAsync(PersonCreateRequest personRequest)
     {
         var createdPerson = _repository.Add(personRequest);
+        await _randomIntegration.InvokeRandomIntegrationAsync();
         return createdPerson;
     }
 

@@ -1,12 +1,14 @@
 ﻿using HiQ.Leap.Samples.Domain.Models;
 using HiQ.Leap.Samples.Domain.RequestModels;
 using HiQ.Leap.Samples.Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HiQ.Leap.Samples.APIExample.Controllers;
 
 [ApiController]
 [Route("/[controller]")]
+[Authorize]
 public class PersonsController : ControllerBase
 {
     private readonly IPersonService _personService;
@@ -17,9 +19,9 @@ public class PersonsController : ControllerBase
     }
 
     [HttpPost(Name = "PostPerson")]
-    public ActionResult<Person> Post([FromBody] PersonCreateRequest request)
+    public async Task<ActionResult<Person>> Post([FromBody] PersonCreateRequest request)
     {
-        var result = _personService.SavePerson(request);
+        var result = await _personService.SavePersonAsync(request);
         return Created(nameof(Person), result);
     }
 

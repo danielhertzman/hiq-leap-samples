@@ -8,7 +8,7 @@ namespace HiQ.Leap.Samples.Repository;
 public class Repository : IRepository
 {
     private readonly Dictionary<int, Person> _persons;
-    private static int CurrentKey;
+    private int CurrentKey;
 
     public Repository()
     {

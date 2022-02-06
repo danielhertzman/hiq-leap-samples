@@ -1,7 +1,7 @@
-﻿using System.Net;
-using System.Text.Json;
-using HiQ.Leap.Samples.APIExample.Middleware;
-using HiQ.Leap.Samples.Domain.Exceptions;
+﻿using HiQ.Leap.Samples.APIExample.Middleware;
+using HiQ.Leap.Samples.APIExample.Security;
+using HiQ.Leap.Samples.RandomIntegration;
+using HiQ.Leap.Samples.RandomIntegration.Contracts;
 using HiQ.Leap.Samples.Repository;
 using HiQ.Leap.Samples.Repository.Contracts;
 using HiQ.Leap.Samples.Services;
@@ -17,8 +17,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IPersonService, PersonService>();
+//builder.Services.AddSingleton<IPersonService, FakePersonService>();
 builder.Services.AddSingleton<IRepository, Repository>();
+builder.Services.AddSingleton<IRandomIntegration, AdviceMemeIntegration>();
 builder.Services.AddLogging();
+
+// Configure security (see Security/AuthConfigurator.cs)
+builder.Services.ConfigureJwtBearer();
+builder.Services.ConfigurePolicies();
+builder.Services.ConfigureSwaggerSecurity();
 
 var app = builder.Build();
 
@@ -56,6 +63,7 @@ app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

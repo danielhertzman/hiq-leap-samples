@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31205.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiQ.Leap.Samples.APIExample", "HiQ.Leap.Samples.APIExample\HiQ.Leap.Samples.APIExample.csproj", "{3CB23141-62A6-42F2-A6DC-D218084DD9F3}"
 EndProject
@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiQ.Leap.Samples.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiQ.Leap.Samples.FunctionAppExample", "HiQ.Leap.Samples.FunctionAppExample\HiQ.Leap.Samples.FunctionAppExample.csproj", "{D728994A-9BAA-4ED7-9428-E1B02E5511BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiQ.Leap.Samples.Repository", "HiQ.Leap.Samples.Repository\HiQ.Leap.Samples.Repository.csproj", "{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiQ.Leap.Samples.Repository", "HiQ.Leap.Samples.Repository\HiQ.Leap.Samples.Repository.csproj", "{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiQ.Leap.Samples.RandomIntegration", "HiQ.Leap.Samples.RandomIntegration\HiQ.Leap.Samples.RandomIntegration.csproj", "{13F13CC8-01C6-4543-B549-FD0487940183}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F13CC8-01C6-4543-B549-FD0487940183}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F13CC8-01C6-4543-B549-FD0487940183}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F13CC8-01C6-4543-B549-FD0487940183}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F13CC8-01C6-4543-B549-FD0487940183}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

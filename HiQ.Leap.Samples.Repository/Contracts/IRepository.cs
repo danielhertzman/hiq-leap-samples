@@ -1,18 +1,17 @@
 ﻿using HiQ.Leap.Samples.Domain.Models;
 using HiQ.Leap.Samples.Domain.RequestModels;
 
-namespace HiQ.Leap.Samples.Repository.Contracts
+namespace HiQ.Leap.Samples.Repository.Contracts;
+
+public interface IRepository
 {
-    public interface IRepository
-	{
-		Person Add(PersonCreateRequest person);
+    Person Add(PersonCreateRequest person);
 
-		List<Person> GetPersons();
+    List<Person> GetPersons();
 
-		Person GetPerson(int id);
+    Person GetPerson(int id);
 
-		void UpdatePerson(int id, PersonEditRequest request);
+    void UpdatePerson(int id, PersonEditRequest request);
 
-		void DeletePerson(int id);
-	}
+    void DeletePerson(int id);
 }
