@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiQ.Leap.Samples.FunctionAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiQ.Leap.Samples.Repository", "HiQ.Leap.Samples.Repository\HiQ.Leap.Samples.Repository.csproj", "{AA834A18-CE1D-453F-BAF4-6678BD9C8F40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiQ.Leap.Samples.RandomIntegration", "HiQ.Leap.Samples.RandomIntegration\HiQ.Leap.Samples.RandomIntegration.csproj", "{13F13CC8-01C6-4543-B549-FD0487940183}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiQ.Leap.Samples.RandomIntegration", "HiQ.Leap.Samples.RandomIntegration\HiQ.Leap.Samples.RandomIntegration.csproj", "{13F13CC8-01C6-4543-B549-FD0487940183}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiQ.Leap.Samples.Tests.UnitTests", "HiQ.Leap.Samples.Tests.UnitTests\HiQ.Leap.Samples.Tests.UnitTests.csproj", "{E3EC1A20-163D-4570-A3E6-E90B61EB0E00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiQ.Leap.Samples.Tests.IntegrationTests", "HiQ.Leap.Samples.Tests.IntegrationTests\HiQ.Leap.Samples.Tests.IntegrationTests.csproj", "{805697C7-F20D-42A8-BA19-030D7B82FE92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{13F13CC8-01C6-4543-B549-FD0487940183}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13F13CC8-01C6-4543-B549-FD0487940183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13F13CC8-01C6-4543-B549-FD0487940183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3EC1A20-163D-4570-A3E6-E90B61EB0E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3EC1A20-163D-4570-A3E6-E90B61EB0E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3EC1A20-163D-4570-A3E6-E90B61EB0E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3EC1A20-163D-4570-A3E6-E90B61EB0E00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805697C7-F20D-42A8-BA19-030D7B82FE92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805697C7-F20D-42A8-BA19-030D7B82FE92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{805697C7-F20D-42A8-BA19-030D7B82FE92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805697C7-F20D-42A8-BA19-030D7B82FE92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -21,4 +21,9 @@
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="HiQ.Leap.Samples.Tests.IntegrationTests" />
+  </ItemGroup>
+
 </Project>
