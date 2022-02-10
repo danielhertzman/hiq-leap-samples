@@ -6,13 +6,13 @@ using Microsoft.Extensions.Hosting;
 
 namespace HiQ.Leap.Samples.Tests.IntegrationTests;
 
-internal class IntegrationTestApplicationHost : WebApplicationFactory<Program>
+internal class BasicIntegrationTestApplicationHost : WebApplicationFactory<Program>
 {
     private readonly string _environment;
 
     internal HttpClient HttpClient;
 
-    public IntegrationTestApplicationHost(string environment = "IntegrationTests")
+    public BasicIntegrationTestApplicationHost(string environment = "IntegrationTests")
     {
         _environment = environment;
         HttpClient = CreateClient();
@@ -25,7 +25,10 @@ internal class IntegrationTestApplicationHost : WebApplicationFactory<Program>
         builder.UseEnvironment(_environment);
 
         // Add mock/test services to the builder here
-        builder.ConfigureServices(_ => {});
+        //builder.ConfigureServices(services =>
+        //{
+        //    services.AddSingleton<IRandomIntegration, RandomIntegrationStub>();
+        //});
 
         return base.CreateHost(builder);
     }

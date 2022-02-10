@@ -19,7 +19,7 @@ public class PersonsController : ControllerBase
     }
 
     [HttpPost(Name = "PostPerson")]
-    public async Task<ActionResult<Person>> Post([FromBody] PersonCreateRequest request)
+    public async Task<IActionResult> Post([FromBody] PersonCreateRequest request)
     {
         var result = await _personService.SavePersonAsync(request);
         return Created(nameof(Person), result);
@@ -33,7 +33,7 @@ public class PersonsController : ControllerBase
     }
 
     [HttpGet("{id:int}", Name = "GetPersonById")]
-    public ActionResult<Person> GetPersonById([FromRoute] int id)
+    public IActionResult GetPersonById([FromRoute] int id)
     {
         var result = _personService.GetPerson(id);
         return Ok(result);
