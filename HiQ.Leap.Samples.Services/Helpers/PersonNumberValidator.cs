@@ -4,6 +4,22 @@ public static class PersonNumberValidator
 {
     public static bool IsValidPersonNumber(string personNumber)
     {
+        if (string.IsNullOrWhiteSpace(personNumber))
+        {
+            return false;
+        }
+
+        if (personNumber.Contains("-"))
+        {
+            personNumber = personNumber.Replace("-", string.Empty);
+        }
+
+        // formattera bort första siffrorna
+        if (personNumber.Length >= 10)
+        {
+            personNumber = personNumber.Remove(0, personNumber.Length - 10);
+        }
+
         if (!IsValidLuhn(personNumber))
         {
             return false;
